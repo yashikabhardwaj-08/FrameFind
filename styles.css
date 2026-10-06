@@ -203,7 +203,7 @@ h2 {
   border: 0;
   border-radius: 12px;
   background: var(--accent);
-  color: white;
+  color: rgba(255, 255, 255, 0.578);
   cursor: pointer;
   font: inherit;
   font-weight: 800;
@@ -321,3 +321,73 @@ footer {
     min-height: 48px;
   }
 }
+
+
+/* Card styling for fetched results */
+.card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.card-title {
+  padding: 10px;
+  font-size: 0.85rem;
+  color: #333;
+  margin: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* Part 3: Spinner & Animation Styles */
+.loader {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #008080;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: 30px auto;
+}
+
+.hidden {
+  display: none !important;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.fade-in {
+  animation: fadeIn 0.4s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.status-message {
+  text-align: center;
+  font-weight: 500;
+  margin: 15px 0;
+  color: #444;
+}
+
